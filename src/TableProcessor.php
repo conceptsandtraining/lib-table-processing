@@ -38,9 +38,9 @@ class TableProcessor
                 $record = $this->backend->valid($record);
 
                 if (count($record->getErrors()) > 0) {
-                    $records[] = $record;
+                    $records[$key] = $record;
                 } else {
-                    $records[] = $this->createUpdateRecord($record);
+                    $records[$key] = $this->createUpdateRecord($record);
                 }
             }
         }
